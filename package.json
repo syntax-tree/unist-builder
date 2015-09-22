@@ -1,0 +1,36 @@
+{
+  "name": "unist-util-builder",
+  "version": "0.0.0",
+  "description": "Helper for creating unist trees",
+  "author": "Eugene Sharygin <eush77@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/eush77/unist-util-builder",
+  "repository": "eush77/unist-util-builder",
+  "bugs": {
+    "url": "https://github.com/eush77/unist-util-builder/issues"
+  },
+  "keywords": [
+    "ast",
+    "build",
+    "builder",
+    "create",
+    "dsl",
+    "hyperscript",
+    "sugar",
+    "syntax",
+    "tree",
+    "unist"
+  ],
+  "dependencies": {
+    "object.assign": "^4.0.1"
+  },
+  "devDependencies": {
+    "tape": "^4.2.0"
+  }
+}
