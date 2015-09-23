@@ -1,6 +1,6 @@
-[![npm](https://nodei.co/npm/unist-util-builder.png)](https://npmjs.com/package/unist-util-builder)
+[![npm](https://nodei.co/npm/unist-builder.png)](https://npmjs.com/package/unist-builder)
 
-# unist-util-builder
+# unist-builder
 
 [![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
 
@@ -9,15 +9,15 @@ Helper for creating [unist] trees with [hyperscript]-like syntax.
 [unist]: https://github.com/wooorm/unist
 [hyperscript]: https://github.com/dominictarr/hyperscript
 
-[travis]: https://travis-ci.org/eush77/unist-util-builder
-[travis-badge]: https://travis-ci.org/eush77/unist-util-builder.svg?branch=master
-[david]: https://david-dm.org/eush77/unist-util-builder
-[david-badge]: https://david-dm.org/eush77/unist-util-builder.png
+[travis]: https://travis-ci.org/eush77/unist-builder
+[travis-badge]: https://travis-ci.org/eush77/unist-builder.svg?branch=master
+[david]: https://david-dm.org/eush77/unist-builder
+[david-badge]: https://david-dm.org/eush77/unist-builder.png
 
 ## Example
 
 ```js
-var u = require('unist-util-builder');
+var u = require('unist-builder');
 
 u('root', [
   u('subtree', { id: 1 }),
@@ -90,7 +90,7 @@ Creates a node from `props` and given child nodes.
 ## Install
 
 ```
-npm install unist-util-builder
+npm install unist-builder
 ```
 
 ## License
