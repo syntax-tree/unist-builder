@@ -1,6 +1,6 @@
 {
   "name": "unist-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper for creating unist trees",
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "license": "MIT",
