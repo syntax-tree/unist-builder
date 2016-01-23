@@ -11,7 +11,8 @@ test(function (t) {
     u('subtree', { id: 2 }, [
       u('node', [
         u('leaf', 'leaf-1'),
-        u('leaf', 'leaf-2')
+        u('leaf', 'leaf-2'),
+        u('leaf', '')
       ]),
       u('leaf', { id: 3 }, 'leaf-3')
     ])
@@ -33,6 +34,9 @@ test(function (t) {
         }, {
           type: 'leaf',
           value: 'leaf-2'
+        }, {
+          type: 'leaf',
+          value: ''
         }]
       }, {
         type: 'leaf',

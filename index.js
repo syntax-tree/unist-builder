@@ -10,7 +10,7 @@ module.exports = function u (type, props, value) {
   }
 
   return assign({}, props, { type: String(type) },
-                value && (Array.isArray(value)
-                          ? { children: value }
-                          : { value: String(value) }));
+                value != null && (Array.isArray(value)
+                                  ? { children: value }
+                                  : { value: String(value) }));
 };
