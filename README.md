@@ -4,7 +4,7 @@
 
 [![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
 
-Helper for creating [unist] trees with [hyperscript]-like syntax.
+Helper for creating [unist][] trees with [hyperscript][]-like syntax.
 
 [unist]: https://github.com/wooorm/unist
 [hyperscript]: https://github.com/dominictarr/hyperscript
