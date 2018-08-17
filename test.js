@@ -1,8 +1,7 @@
 'use strict'
 
-var u = require('..')
-
 var test = require('tape')
+var u = require('.')
 
 test(function(t) {
   t.deepEqual(

@@ -29,6 +29,7 @@
     "object-assign": "^4.1.0"
   },
   "devDependencies": {
+    "nyc": "^12.0.2",
     "prettier": "^1.14.2",
     "remark-cli": "^5.0.0",
     "remark-preset-wooorm": "^4.0.0",
@@ -37,7 +38,15 @@
   },
   "scripts": {
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
-    "test": "node test"
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
   },
   "prettier": {
     "tabWidth": 2,
