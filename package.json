@@ -30,11 +30,13 @@
   },
   "devDependencies": {
     "prettier": "^1.14.2",
+    "remark-cli": "^5.0.0",
+    "remark-preset-wooorm": "^4.0.0",
     "tape": "^4.2.0",
     "xo": "^0.22.0"
   },
   "scripts": {
-    "format": "prettier --write '**/*.js' && xo --fix",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "test": "node test"
   },
   "prettier": {
@@ -48,5 +50,10 @@
   "xo": {
     "prettier": true,
     "esnext": false
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }

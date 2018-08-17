@@ -1,20 +1,16 @@
-[![npm](https://nodei.co/npm/unist-builder.png)](https://npmjs.com/package/unist-builder)
+# unist-builder [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-# unist-builder
+Helper for creating [**unist**][unist] trees with [hyperscript][]-like syntax.
 
-[![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
+## Installation
 
-Helper for creating [unist][] trees with [hyperscript][]-like syntax.
+[npm][]:
 
-[unist]: https://github.com/wooorm/unist
-[hyperscript]: https://github.com/dominictarr/hyperscript
+```bash
+npm install unist-builder
+```
 
-[travis]: https://travis-ci.org/eush77/unist-builder
-[travis-badge]: https://travis-ci.org/eush77/unist-builder.svg?branch=master
-[david]: https://david-dm.org/eush77/unist-builder
-[david-badge]: https://david-dm.org/eush77/unist-builder.png
-
-## Example
+## Usage
 
 ```js
 var u = require('unist-builder')
@@ -57,28 +53,74 @@ results in the following tree:
 
 ## API
 
-#### `u(type, [props], [value])`
+### `u(type[, props][, children|value])`
 
-`type`: `String`<br>
-`props`: `Object`<br>
-`value`: `String`<br>
+Creates a node from `props`, `children`, and optionally `value`.
 
-Creates a node from `props` and optional `value`.
+###### Signatures
 
-#### `u(type, [props], children)`
+*   `u(type[, props], children)` — create a [parent][]
+*   `u(type[, props], value)` — create a [text][]
+*   `u(type[, props])` — create a void node
 
-`type`: `String`<br>
-`props`: `Object`<br>
-`children`: `Array`<br>
+###### Parameters
 
-Creates a node from `props` and given child nodes.
+*   `type` (`string`) — node [type][]
+*   `props` (`Object`) — other values assigned to `node`
+*   `children` ([`Array.<Node>`][node]) — children of `node`
+*   `value` (`*`) — value of `node` (cast to string)
 
-## Install
+###### Returns
 
-```
-npm install unist-builder
-```
+[`Node`][node].
+
+## Related
+
+*   [`unist-builder-blueprint`](https://github.com/syntax-tree/unist-builder-blueprint)
+    — Convert unist trees to `unist-builder` notation
+*   [`hastscript`](https://github.com/syntax-tree/hastscript)
+    — Create [hast][] elements
+
+## Contribute
+
+See [`contributing.md` in `syntax-tree/unist`][contributing] for ways to get
+started.
+
+This organisation has a [Code of Conduct][coc].  By interacting with this
+repository, organisation, or community you agree to abide by its terms.
 
 ## License
 
-MIT
+[MIT][license] © Eugene Sharygin
+
+<!-- Definitions -->
+
+[travis-badge]: https://img.shields.io/travis/syntax-tree/unist-builder.svg
+
+[travis]: https://travis-ci.org/syntax-tree/unist-builder
+
+[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-builder.svg
+
+[codecov]: https://codecov.io/github/syntax-tree/unist-builder
+
+[npm]: https://docs.npmjs.com/cli/install
+
+[license]: license
+
+[contributing]: https://github.com/syntax-tree/unist/blob/master/contributing.md
+
+[coc]: https://github.com/syntax-tree/unist/blob/master/code-of-conduct.md
+
+[unist]: https://github.com/syntax-tree/unist
+
+[hast]: https://github.com/syntax-tree/hast
+
+[hyperscript]: https://github.com/dominictarr/hyperscript
+
+[node]: https://github.com/syntax-tree/unist#node
+
+[parent]: https://github.com/syntax-tree/unist#parent
+
+[text]: https://github.com/syntax-tree/unist#text
+
+[type]: https://github.com/syntax-tree/unist#type
