@@ -1,16 +1,27 @@
-'use strict';
+'use strict'
 
-var assign = require('object-assign');
+var assign = require('object-assign')
 
+module.exports = u
 
-module.exports = function u (type, props, value) {
-  if (value == null && (typeof props != 'object' || Array.isArray(props))) {
-    value = props;
-    props = {};
+function u(type, props, value) {
+  var node
+
+  if (
+    (value === null || value === undefined) &&
+    (typeof props !== 'object' || Array.isArray(props))
+  ) {
+    value = props
+    props = {}
   }
 
-  return assign({}, props, { type: String(type) },
-                value != null && (Array.isArray(value)
-                                  ? { children: value }
-                                  : { value: String(value) }));
-};
+  node = assign({type: String(type)}, props)
+
+  if (Array.isArray(value)) {
+    node.children = value
+  } else if (value !== null && value !== undefined) {
+    node.value = String(value)
+  }
+
+  return node
+}
