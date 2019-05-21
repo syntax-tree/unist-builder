@@ -1,4 +1,9 @@
-# unist-builder [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# unist-builder
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 Helper for creating [**unist**][unist] trees with [hyperscript][]-like syntax.
 
@@ -95,13 +100,21 @@ repository, organisation, or community you agree to abide by its terms.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/syntax-tree/unist-builder.svg
+[build-badge]: https://img.shields.io/travis/syntax-tree/unist-builder.svg
 
-[travis]: https://travis-ci.org/syntax-tree/unist-builder
+[build]: https://travis-ci.org/syntax-tree/unist-builder
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-builder.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-builder.svg
 
-[codecov]: https://codecov.io/github/syntax-tree/unist-builder
+[coverage]: https://codecov.io/github/syntax-tree/unist-builder
+
+[downloads-badge]: https://img.shields.io/npm/dm/unist-builder.svg
+
+[downloads]: https://www.npmjs.com/package/unist-builder
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/unist-builder.svg
+
+[size]: https://bundlephobia.com/result?p=unist-builder
 
 [npm]: https://docs.npmjs.com/cli/install
 
