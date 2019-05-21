@@ -5,9 +5,10 @@
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
-Helper for creating [**unist**][unist] trees with [hyperscript][]-like syntax.
+[**unist**][unist] utility to create a new [tree][]s with [hyperscript][]-like
+syntax.
 
-## Installation
+## Install
 
 [npm][]:
 
@@ -23,8 +24,9 @@ var u = require('unist-builder')
 var tree = u('root', [
   u('subtree', {id: 1}),
   u('subtree', {id: 2}, [
-    u('node', [u('leaf', 'leaf-1'), u('leaf', 'leaf-2')]),
-    u('leaf', {id: 3}, 'leaf-3')
+    u('node', [u('leaf', 'leaf 1'), u('leaf', 'leaf 2')]),
+    u('leaf', {id: 3}, 'leaf 3'),
+    u('void', {id: 4})
   ])
 ])
 
@@ -45,11 +47,12 @@ results in the following tree:
         {
           type: 'node',
           children: [
-            {type: 'leaf', value: 'leaf-1'},
-            {type: 'leaf', value: 'leaf-2'}
+            {type: 'leaf', value: 'leaf 1'},
+            {type: 'leaf', value: 'leaf 2'}
           ]
         },
-        {type: 'leaf', id: 3, value: 'leaf-3'}
+        {type: 'leaf', id: 3, value: 'leaf 3'},
+        {type: 'void', id: 4}
       ]
     }
   ]
@@ -65,7 +68,7 @@ Creates a node from `props`, `children`, and optionally `value`.
 ###### Signatures
 
 *   `u(type[, props], children)` — create a [parent][]
-*   `u(type[, props], value)` — create a [text][]
+*   `u(type[, props], value)` — create a [literal][]
 *   `u(type[, props])` — create a void node
 
 ###### Parameters
@@ -88,11 +91,13 @@ Creates a node from `props`, `children`, and optionally `value`.
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/unist`][contributing] for ways to get
+See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
 started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
@@ -120,9 +125,11 @@ repository, organisation, or community you agree to abide by its terms.
 
 [license]: license
 
-[contributing]: https://github.com/syntax-tree/unist/blob/master/contributing.md
+[contributing]: https://github.com/syntax-tree/.github/blob/master/contributing.md
 
-[coc]: https://github.com/syntax-tree/unist/blob/master/code-of-conduct.md
+[support]: https://github.com/syntax-tree/.github/blob/master/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/master/code-of-conduct.md
 
 [unist]: https://github.com/syntax-tree/unist
 
@@ -132,8 +139,10 @@ repository, organisation, or community you agree to abide by its terms.
 
 [node]: https://github.com/syntax-tree/unist#node
 
+[tree]: https://github.com/syntax-tree/unist#tree
+
 [parent]: https://github.com/syntax-tree/unist#parent
 
-[text]: https://github.com/syntax-tree/unist#text
+[literal]: https://github.com/syntax-tree/unist#literal
 
 [type]: https://github.com/syntax-tree/unist#type
