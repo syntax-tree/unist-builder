@@ -20,15 +20,20 @@
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "contributors": [
     "Eugene Sharygin <eush77@gmail.com>",
-    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Christian Murphy <christian.murphy.42@gmail.com>"
   ],
   "files": [
-    "index.js"
+    "index.js",
+    "types/index.d.ts"
   ],
+  "types": "types/index.d.ts",
   "dependencies": {
     "object-assign": "^4.1.0"
   },
   "devDependencies": {
+    "@types/mdast": "^3.0.3",
+    "dtslint": "^0.9.9",
     "nyc": "^14.0.0",
     "prettier": "^1.14.2",
     "remark-cli": "^6.0.0",
@@ -40,7 +45,8 @@
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "test-api": "node test",
     "test-coverage": "nyc --reporter lcov tape test.js",
-    "test": "npm run format && npm run test-coverage"
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run test-coverage && npm run test-types"
   },
   "nyc": {
     "check-coverage": true,
