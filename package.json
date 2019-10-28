@@ -32,14 +32,14 @@
     "object-assign": "^4.1.0"
   },
   "devDependencies": {
-    "@types/mdast": "^3.0.3",
+    "@types/mdast": "^3.0.0",
     "dtslint": "^0.9.9",
     "nyc": "^14.0.0",
-    "prettier": "^1.14.2",
-    "remark-cli": "^6.0.0",
-    "remark-preset-wooorm": "^5.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
     "tape": "^4.0.0",
-    "xo": "^0.24.0"
+    "xo": "^0.25.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
