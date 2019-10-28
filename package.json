@@ -1,6 +1,6 @@
 {
   "name": "unist-builder",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Helper for creating unist trees",
   "license": "MIT",
   "keywords": [
