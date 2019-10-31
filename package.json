@@ -28,9 +28,7 @@
     "types/index.d.ts"
   ],
   "types": "types/index.d.ts",
-  "dependencies": {
-    "object-assign": "^4.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/mdast": "^3.0.0",
     "dtslint": "^0.9.9",
