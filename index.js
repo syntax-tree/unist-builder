@@ -1,7 +1,5 @@
 'use strict'
 
-var assign = require('object-assign')
-
 module.exports = u
 
 function u(type, props, value) {
@@ -15,7 +13,7 @@ function u(type, props, value) {
     props = {}
   }
 
-  node = assign({type: String(type)}, props)
+  node = Object.assign({type: String(type)}, props)
 
   if (Array.isArray(value)) {
     node.children = value
