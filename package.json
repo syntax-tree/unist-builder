@@ -31,7 +31,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/mdast": "^3.0.0",
-    "dtslint": "^1.0.0",
+    "dtslint": "^2.0.0",
     "nyc": "^14.0.0",
     "prettier": "^1.0.0",
     "remark-cli": "^7.0.0",
