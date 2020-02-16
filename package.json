@@ -16,9 +16,7 @@
     "dsl",
     "hyperscript",
     "sugar",
-    "syntax",
-    "tree",
-    "unist"
+    "syntax"
   ],
   "repository": "syntax-tree/unist-builder",
   "bugs": "https://github.com/syntax-tree/unist-builder/issues",
@@ -40,13 +38,13 @@
   "dependencies": {},
   "devDependencies": {
     "@types/mdast": "^3.0.0",
-    "dtslint": "^2.0.0",
-    "nyc": "^14.0.0",
+    "dtslint": "^3.0.0",
+    "nyc": "^15.0.0",
     "prettier": "^1.0.0",
     "remark-cli": "^7.0.0",
     "remark-preset-wooorm": "^6.0.0",
     "tape": "^4.0.0",
-    "xo": "^0.25.0"
+    "xo": "^0.26.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
