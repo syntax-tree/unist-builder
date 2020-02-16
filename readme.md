@@ -19,7 +19,7 @@ syntax.
 npm install unist-builder
 ```
 
-## Usage
+## Use
 
 ```js
 var u = require('unist-builder')
@@ -91,6 +91,8 @@ Creates a node from `props`, `children`, and optionally `value`.
     — Convert unist trees to `unist-builder` notation
 *   [`hastscript`](https://github.com/syntax-tree/hastscript)
     — Create [hast][] elements
+*   [`xastscript`](https://github.com/syntax-tree/xastscript)
+    — Create [xast][] elements
 
 ## Contribute
 
@@ -98,8 +100,8 @@ See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
 started.
 See [`support.md`][support] for ways to get help.
 
-This project has a [Code of Conduct][coc].
-By interacting with this repository, organisation, or community you agree to
+This project has a [code of conduct][coc].
+By interacting with this repository, organization, or community you agree to
 abide by its terms.
 
 ## License
@@ -130,7 +132,7 @@ abide by its terms.
 
 [collective]: https://opencollective.com/unified
 
-[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+[chat-badge]: https://img.shields.io/badge/chat-spectrum-7b16ff.svg
 
 [chat]: https://spectrum.chat/unified/syntax-tree
 
@@ -147,6 +149,8 @@ abide by its terms.
 [unist]: https://github.com/syntax-tree/unist
 
 [hast]: https://github.com/syntax-tree/hast
+
+[xast]: https://github.com/syntax-tree/xast
 
 [hyperscript]: https://github.com/dominictarr/hyperscript
 
