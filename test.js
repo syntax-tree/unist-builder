@@ -3,7 +3,7 @@
 var test = require('tape')
 var u = require('.')
 
-test(function(t) {
+test(function (t) {
   t.deepEqual(
     u('root', [
       u('subtree', {id: 1}),
