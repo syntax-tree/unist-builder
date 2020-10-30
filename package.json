@@ -72,7 +72,17 @@
     "esnext": false,
     "ignore": [
       "types/"
-    ]
+    ],
+    "rules": {
+      "eqeqeq": [
+        "error",
+        "always",
+        {
+          "null": "ignore"
+        }
+      ],
+      "no-eq-null": "off"
+    }
   },
   "remarkConfig": {
     "plugins": [

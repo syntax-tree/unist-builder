@@ -3,21 +3,17 @@
 module.exports = u
 
 function u(type, props, value) {
-  var node
+  var node = {type: String(type)}
 
-  if (
-    (value === null || value === undefined) &&
-    (typeof props !== 'object' || Array.isArray(props))
-  ) {
+  if (value == null && (typeof props !== 'object' || Array.isArray(props))) {
     value = props
-    props = {}
+  } else {
+    Object.assign(node, props)
   }
-
-  node = Object.assign({type: String(type)}, props)
 
   if (Array.isArray(value)) {
     node.children = value
-  } else if (value !== null && value !== undefined) {
+  } else if (value != null) {
     node.value = String(value)
   }
 
