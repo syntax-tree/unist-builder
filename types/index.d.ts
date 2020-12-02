@@ -34,11 +34,10 @@ declare function unistBuilder<T extends string>(
  * @param props additional properties for node
  * @param value value property of node
  */
-declare function unistBuilder<T extends string, P extends {}>(
-  type: T,
-  props: P,
-  value: string
-): {type: T; value: string} & P
+declare function unistBuilder<
+  T extends string,
+  P extends Record<string, unknown>
+>(type: T, props: P, value: string): {type: T; value: string} & P
 
 /**
  * Creates a node, with type and children
@@ -58,11 +57,11 @@ declare function unistBuilder<T extends string, C extends Node[]>(
  * @param props additional properties for node
  * @param children child nodes of the current node
  */
-declare function unistBuilder<T extends string, P extends {}, C extends Node[]>(
-  type: T,
-  props: P,
-  children: C
-): {type: T; children: C} & P
+declare function unistBuilder<
+  T extends string,
+  P extends Record<string, unknown>,
+  C extends Node[]
+>(type: T, props: P, children: C): {type: T; children: C} & P
 
 /**
  * Creates a node, with type and props
@@ -70,9 +69,9 @@ declare function unistBuilder<T extends string, P extends {}, C extends Node[]>(
  * @param type type of node
  * @param props additional properties for node
  */
-declare function unistBuilder<T extends string, P extends {}>(
-  type: T,
-  props: P
-): {type: T} & P
+declare function unistBuilder<
+  T extends string,
+  P extends Record<string, unknown>
+>(type: T, props: P): {type: T} & P
 
 export = unistBuilder
