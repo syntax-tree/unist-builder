@@ -1,11 +1,10 @@
-'use strict'
-
-module.exports = u
-
-function u(type, props, value) {
+export function u(type, props, value) {
   var node = {type: String(type)}
 
-  if (value == null && (typeof props !== 'object' || Array.isArray(props))) {
+  if (
+    (value === undefined || value === null) &&
+    (typeof props !== 'object' || Array.isArray(props))
+  ) {
     value = props
   } else {
     Object.assign(node, props)
@@ -13,7 +12,7 @@ function u(type, props, value) {
 
   if (Array.isArray(value)) {
     node.children = value
-  } else if (value != null) {
+  } else if (value !== undefined && value !== null) {
     node.value = String(value)
   }
 

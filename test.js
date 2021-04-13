@@ -1,9 +1,7 @@
-'use strict'
+import test from 'tape'
+import {u} from './index.js'
 
-var test = require('tape')
-var u = require('.')
-
-test(function (t) {
+test('u', function (t) {
   t.deepEqual(
     u('root', [
       u('subtree', {id: 1}),
