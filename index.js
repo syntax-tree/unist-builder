@@ -13,11 +13,9 @@
  * @typedef {(<T extends string>(type: T) => {type: T})} BuildVoid
  */
 
-/**
+export var u = /**
  * @type {BuildVoid & BuildVoidWithProps & BuildLiteral & BuildLiteralWithProps & BuildParent & BuildParentWithProps}
- */
-// prettier-ignore
-export var u = (
+ */ (
   /**
    * @param {string} type Type of node
    * @param {Props|ChildrenOrValue} [props] Additional properties for node (or `children` or `value`)
