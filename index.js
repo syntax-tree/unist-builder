@@ -5,36 +5,16 @@
  * @typedef {Object.<string, unknown>} Props
  * @typedef {Array.<Node>|string} ChildrenOrValue
  *
- * @callback BuildParentWithProps
- * @param {string} type
- * @param {Props} props
- * @param {Array.<Node>} value
- * @returns {Parent}
- *
- * @callback BuildParentWithoutProps
- * @param {string} type
- * @param {Array.<Node>} value
- * @returns {Parent}
- *
- * @callback BuildLiteralWithProps
- * @param {string} type
- * @param {Props} props
- * @param {string} value
- * @returns {Literal}
- *
- * @callback BuildLiteralWithoutProps
- * @param {string} type
- * @param {string} value
- * @returns {Literal}
- *
- * @callback BuildVoid
- * @param {string} type
- * @param {Props} [props]
- * @returns {Node}
+ * @typedef {(<T extends string, P extends Record<string, unknown>, C extends Node[]>(type: T, props: P, children: C) => {type: T, children: C} & P)} BuildParentWithProps
+ * @typedef {(<T extends string, P extends Record<string, unknown>>(type: T, props: P, value: string) => {type: T, value: string} & P)} BuildLiteralWithProps
+ * @typedef {(<T extends string, P extends Record<string, unknown>>(type: T, props: P) => {type: T} & P)} BuildVoidWithProps
+ * @typedef {(<T extends string, C extends Node[]>(type: T, children: C) => {type: T, children: C})} BuildParent
+ * @typedef {(<T extends string>(type: T, value: string) => {type: T, value: string})} BuildLiteral
+ * @typedef {(<T extends string>(type: T) => {type: T})} BuildVoid
  */
 
 /**
- * @type {BuildParentWithProps & BuildParentWithoutProps & BuildLiteralWithProps & BuildLiteralWithoutProps & BuildVoid}
+ * @type {BuildVoid & BuildVoidWithProps & BuildLiteral & BuildLiteralWithProps & BuildParent & BuildParentWithProps}
  */
 // prettier-ignore
 export var u = (
@@ -65,5 +45,4 @@ export var u = (
 
     return node
   }
-
 )
