@@ -36,8 +36,10 @@ export var u = /**
     }
 
     if (Array.isArray(value)) {
+      // @ts-expect-error: create a parent.
       node.children = value
     } else if (value !== undefined && value !== null) {
+      // @ts-expect-error: create a literal.
       node.value = String(value)
     }
 
