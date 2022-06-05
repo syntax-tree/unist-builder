@@ -8,18 +8,58 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**unist**][unist] utility to create a new [tree][]s with [hyperscript][]-like
-syntax.
+[unist][] utility to create trees with ease.
+
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`u(type[, props][, children|value])`](#utype-props-childrenvalue)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This package is a hyperscript interface (like `createElement` from React and
+`h` from Vue and such) to help with creating unist trees.
+
+## When should I use this?
+
+You can use this utility in your project when you generate syntax trees with
+code.
+It helps because it replaces most of the repetition otherwise needed in a syntax
+tree with function calls.
+
+You can instead use [`hastscript`][hastscript] or [`xastscript`][xastscript]
+when creating hast (HTML) or xast (XML) nodes.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, 16.0+, or 18.0+), install with [npm][]:
 
-[npm][]:
-
-```bash
+```sh
 npm install unist-builder
+```
+
+In Deno with [`esm.sh`][esmsh]:
+
+```js
+import {h} from 'https://esm.sh/unist-builder@3'
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import {h} from 'https://esm.sh/unist-builder@3?bundle'
+</script>
 ```
 
 ## Use
@@ -27,7 +67,7 @@ npm install unist-builder
 ```js
 import {u} from 'unist-builder'
 
-var tree = u('root', [
+const tree = u('root', [
   u('subtree', {id: 1}),
   u('subtree', {id: 2}, [
     u('node', [u('leaf', 'leaf 1'), u('leaf', 'leaf 2')]),
@@ -67,7 +107,7 @@ results in the following tree:
 
 ## API
 
-This package exports the following identifiers: `u`.
+This package exports the identifier `u`.
 There is no default export.
 
 ### `u(type[, props][, children|value])`
@@ -76,14 +116,14 @@ Creates a node from `props`, `children`, and optionally `value`.
 
 ###### Signatures
 
-*   `u(type[, props], children)` — create a [parent][]
-*   `u(type[, props], value)` — create a [literal][]
-*   `u(type[, props])` — create a void node
+*   `u(type[, props], children)` — create a parent ([`Parent`][parent])
+*   `u(type[, props], value)` — create a literal ([`Literal`][literal])
+*   `u(type[, props])` — create a void node (neither parent not literal)
 
 ###### Parameters
 
 *   `type` (`string`)
-    — node [type][]
+    — node type
 *   `props` (`Record<string, unknown>`)
     — other values assigned to `node`
 *   `children` ([`Array<Node>`][node])
@@ -95,19 +135,29 @@ Creates a node from `props`, `children`, and optionally `value`.
 
 [`Node`][node].
 
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports the additional types `Props` and `ChildrenOrValue`.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
+
 ## Related
 
-*   [`unist-builder-blueprint`](https://github.com/syntax-tree/unist-builder-blueprint)
-    — Convert unist trees to `unist-builder` notation
 *   [`hastscript`](https://github.com/syntax-tree/hastscript)
-    — Create [hast][] elements
+    — create [hast][] trees
 *   [`xastscript`](https://github.com/syntax-tree/xastscript)
-    — Create [xast][] elements
+    — create [xast][] trees
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
-started.
+See [`contributing.md`][contributing] in [`syntax-tree/.github`][health] for
+ways to get started.
 See [`support.md`][support] for ways to get help.
 
 This project has a [code of conduct][coc].
@@ -148,28 +198,34 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
 [license]: license
 
-[contributing]: https://github.com/syntax-tree/.github/blob/HEAD/contributing.md
+[health]: https://github.com/syntax-tree/.github
 
-[support]: https://github.com/syntax-tree/.github/blob/HEAD/support.md
+[contributing]: https://github.com/syntax-tree/.github/blob/main/contributing.md
 
-[coc]: https://github.com/syntax-tree/.github/blob/HEAD/code-of-conduct.md
+[support]: https://github.com/syntax-tree/.github/blob/main/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
 
 [unist]: https://github.com/syntax-tree/unist
 
-[hast]: https://github.com/syntax-tree/hast
-
-[xast]: https://github.com/syntax-tree/xast
-
-[hyperscript]: https://github.com/dominictarr/hyperscript
-
 [node]: https://github.com/syntax-tree/unist#node
-
-[tree]: https://github.com/syntax-tree/unist#tree
 
 [parent]: https://github.com/syntax-tree/unist#parent
 
 [literal]: https://github.com/syntax-tree/unist#literal
 
-[type]: https://github.com/syntax-tree/unist#type
+[hast]: https://github.com/syntax-tree/hast
+
+[xast]: https://github.com/syntax-tree/xast
+
+[hastscript]: https://github.com/syntax-tree/hastscript
+
+[xastscript]: https://github.com/syntax-tree/xastscript
