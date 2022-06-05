@@ -2,13 +2,13 @@
  * @typedef {import('unist').Node} Node
  * @typedef {import('unist').Parent} Parent
  * @typedef {import('unist').Literal} Literal
- * @typedef {Object.<string, unknown>} Props
- * @typedef {Array.<Node>|string} ChildrenOrValue
+ * @typedef {Record<string, unknown>} Props
+ * @typedef {Array<Node>|string} ChildrenOrValue
  *
- * @typedef {(<T extends string, P extends Record<string, unknown>, C extends Node[]>(type: T, props: P, children: C) => {type: T, children: C} & P)} BuildParentWithProps
+ * @typedef {(<T extends string, P extends Record<string, unknown>, C extends Array<Node>>(type: T, props: P, children: C) => {type: T, children: C} & P)} BuildParentWithProps
  * @typedef {(<T extends string, P extends Record<string, unknown>>(type: T, props: P, value: string) => {type: T, value: string} & P)} BuildLiteralWithProps
  * @typedef {(<T extends string, P extends Record<string, unknown>>(type: T, props: P) => {type: T} & P)} BuildVoidWithProps
- * @typedef {(<T extends string, C extends Node[]>(type: T, children: C) => {type: T, children: C})} BuildParent
+ * @typedef {(<T extends string, C extends Array<Node>>(type: T, children: C) => {type: T, children: C})} BuildParent
  * @typedef {(<T extends string>(type: T, value: string) => {type: T, value: string})} BuildLiteral
  * @typedef {(<T extends string>(type: T) => {type: T})} BuildVoid
  */

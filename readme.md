@@ -82,10 +82,14 @@ Creates a node from `props`, `children`, and optionally `value`.
 
 ###### Parameters
 
-*   `type` (`string`) — node [type][]
-*   `props` (`Object`) — other values assigned to `node`
-*   `children` ([`Array.<Node>`][node]) — children of `node`
-*   `value` (`*`) — value of `node` (cast to string)
+*   `type` (`string`)
+    — node [type][]
+*   `props` (`Record<string, unknown>`)
+    — other values assigned to `node`
+*   `children` ([`Array<Node>`][node])
+    — children of `node`
+*   `value` (`*`)
+    — value of `node` (cast to string)
 
 ###### Returns
 
