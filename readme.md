@@ -51,14 +51,14 @@ npm install unist-builder
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {h} from 'https://esm.sh/unist-builder@3'
+import {u} from 'https://esm.sh/unist-builder@3'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {h} from 'https://esm.sh/unist-builder@3?bundle'
+  import {u} from 'https://esm.sh/unist-builder@3?bundle'
 </script>
 ```
 
