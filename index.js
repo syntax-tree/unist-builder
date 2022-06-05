@@ -13,18 +13,30 @@
  * @typedef {(<T extends string>(type: T) => {type: T})} BuildVoid
  */
 
-export var u = /**
+/**
+ * Build a node.
+ *
+ * @param type
+ *   Node type.
+ * @param [props]
+ *   Fields assigned to node.
+ * @param [value]
+ *   Children of node or value of `node` (cast to string).
+ * @returns
+ *   Built node.
+ */
+export const u = /**
  * @type {BuildVoid & BuildVoidWithProps & BuildLiteral & BuildLiteralWithProps & BuildParent & BuildParentWithProps}
  */ (
   /**
-   * @param {string} type Type of node
-   * @param {Props|ChildrenOrValue} [props] Additional properties for node (or `children` or `value`)
-   * @param {ChildrenOrValue} [value] `children` or `value` of node
+   * @param {string} type
+   * @param {Props|ChildrenOrValue} [props]
+   * @param {ChildrenOrValue} [value]
    * @returns {Node}
    */
   function (type, props, value) {
     /** @type {Node} */
-    var node = {type: String(type)}
+    const node = {type: String(type)}
 
     if (
       (value === undefined || value === null) &&

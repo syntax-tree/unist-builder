@@ -112,7 +112,7 @@ There is no default export.
 
 ### `u(type[, props][, children|value])`
 
-Creates a node from `props`, `children`, and optionally `value`.
+Build a node.
 
 ###### Signatures
 
@@ -125,15 +125,15 @@ Creates a node from `props`, `children`, and optionally `value`.
 *   `type` (`string`)
     — node type
 *   `props` (`Record<string, unknown>`)
-    — other values assigned to `node`
+    — fields assigned to node
 *   `children` ([`Array<Node>`][node])
-    — children of `node`
+    — children of node
 *   `value` (`*`)
     — value of `node` (cast to string)
 
 ###### Returns
 
-[`Node`][node].
+Built node ([`Node`][node]).
 
 ## Types
 
