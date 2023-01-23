@@ -1,8 +1,9 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {u} from './index.js'
 
-test('u', function (t) {
-  t.deepEqual(
+test('u', function () {
+  assert.deepEqual(
     u('root', [
       u('subtree', {id: 1}),
       u('subtree', {id: 2}, [
@@ -32,6 +33,4 @@ test('u', function (t) {
       ]
     }
   )
-
-  t.end()
 })
