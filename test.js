@@ -1,8 +1,15 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {u} from './index.js'
+import * as mod from './index.js'
 
 test('u', function () {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['u'],
+    'should expose the public api'
+  )
+
   assert.deepEqual(
     u('root', [
       u('subtree', {id: 1}),
