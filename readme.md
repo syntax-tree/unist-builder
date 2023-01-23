@@ -18,6 +18,8 @@
 *   [Use](#use)
 *   [API](#api)
     *   [`u(type[, props][, children|value])`](#utype-props-childrenvalue)
+    *   [`ChildrenOrValue`](#childrenorvalue)
+    *   [`Props`](#props)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Related](#related)
@@ -42,7 +44,7 @@ when creating hast (HTML) or xast (XML) nodes.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, 16.0+, or 18.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install unist-builder
@@ -107,7 +109,7 @@ results in the following tree:
 
 ## API
 
-This package exports the identifier `u`.
+This package exports the identifier [`u`][u].
 There is no default export.
 
 ### `u(type[, props][, children|value])`
@@ -135,16 +137,37 @@ Build a node.
 
 Built node ([`Node`][node]).
 
+### `ChildrenOrValue`
+
+List to use as `children` or value to use as `value` (TypeScript type).
+
+###### Type
+
+```ts
+type ChildrenOrValue = Array<Node> | string
+```
+
+### `Props`
+
+Other fields to add to the node (TypeScript type).
+
+###### Type
+
+```ts
+export type Props = Record<string, unknown>
+```
+
 ## Types
 
 This package is fully typed with [TypeScript][].
-It exports the additional types `Props` and `ChildrenOrValue`.
+It exports the additional types [`ChildrenOrValue`][childrenorvalue] and
+[`Props`][props].
 
 ## Compatibility
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Related
@@ -229,3 +252,9 @@ abide by its terms.
 [hastscript]: https://github.com/syntax-tree/hastscript
 
 [xastscript]: https://github.com/syntax-tree/xastscript
+
+[u]: #utype-props-childrenvalue
+
+[props]: #props
+
+[childrenorvalue]: #childrenorvalue
