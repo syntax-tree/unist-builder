@@ -1,5 +1,5 @@
-import {expectType, expectAssignable} from 'tsd'
-import type {Text, List, ListItem, HTML} from 'mdast'
+import {expectAssignable, expectType} from 'tsd'
+import type {HTML, List, ListItem, Text} from 'mdast'
 import {u} from './index.js'
 
 expectType<{type: 'example'}>(u('example'))

@@ -78,10 +78,10 @@ const tree = u('root', [
   ])
 ])
 
-console.dir(tree, {depth: null})
+console.dir(tree, {depth: undefined})
 ```
 
-results in the following tree:
+…yields:
 
 ```js
 {
