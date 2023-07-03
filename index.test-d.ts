@@ -1,6 +1,6 @@
 import {expectAssignable, expectType} from 'tsd'
 import type {HTML, List, ListItem, Text} from 'mdast'
-import {u} from './index.js'
+import {u} from 'unist-builder'
 
 expectType<{type: 'example'}>(u('example'))
 expectType<{type: 'example'} & {property: true}>(u('example', {property: true}))

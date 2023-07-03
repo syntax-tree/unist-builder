@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import {u} from './index.js'
+import {u} from 'unist-builder'
 
 test('u', async function (t) {
   await t.test('should expose the public api', async function () {
-    assert.deepEqual(Object.keys(await import('./index.js')).sort(), ['u'])
+    assert.deepEqual(Object.keys(await import('unist-builder')).sort(), ['u'])
   })
 
   await t.test('should work', async function () {
